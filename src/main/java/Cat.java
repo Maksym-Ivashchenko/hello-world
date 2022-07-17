@@ -34,6 +34,7 @@ class TestAnimal {
     public static void voice(Animal ... animals) {
         for (Animal animal: animals) {
             System.out.println(animal.voice());
+            System.out.println(animal.test());
         }
 
     }

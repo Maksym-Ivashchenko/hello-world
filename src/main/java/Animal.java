@@ -1,5 +1,7 @@
 package src.main.java;
 
+import java.util.Objects;
+
 public abstract class Animal {
 
     private String name;
@@ -19,6 +21,12 @@ public abstract class Animal {
         this.name = name;
     }
 
+    public String test() {
+        String test = "...";
+        test = test + voice();
+        return test;
+    }
+
     protected abstract String voice ();
 
     @Override
@@ -28,5 +36,22 @@ public abstract class Animal {
                 ", x=" + x +
                 ", y=" + y +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return x == animal.x && y == animal.y && Objects.equals(name, animal.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + Objects.hash(this.name);
+        hash = 41 * hash + this.x;
+        hash = 41 * hash + this.y;
+        return hash;
     }
 }
