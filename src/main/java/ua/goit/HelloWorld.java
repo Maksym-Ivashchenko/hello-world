@@ -1,4 +1,4 @@
-package src.main.java;
+package ua.goit;
 
 import java.util.Scanner;
 

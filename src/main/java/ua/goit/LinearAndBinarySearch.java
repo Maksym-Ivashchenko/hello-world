@@ -1,4 +1,4 @@
-package src.main.java;
+package ua.goit;
 
 public class LinearAndBinarySearch {
     private static int counter = 0;

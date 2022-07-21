@@ -1,4 +1,4 @@
-package src.main.java;
+package ua.goit;
 
 public class Student {
 
