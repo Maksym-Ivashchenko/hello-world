@@ -2,8 +2,20 @@ package ua.goit;
 
 import java.util.Objects;
 
-public abstract class Animal {
+public abstract class Animal implements IAnimal {
 
+    public static Animal of() {
+        Animal animal;
+        if (Resources.ANIMAL.equalsIgnoreCase("CAT")) animal = new Cat();
+        else if (Resources.ANIMAL.equalsIgnoreCase("DOG")) animal = new Dog();
+        else animal = new Animal() {
+                @Override
+                public String voice() {
+                    return "uuu";
+                }
+            };
+        return animal;
+    }
     private String name;
     private int x;
     private int y;
@@ -26,8 +38,6 @@ public abstract class Animal {
         test = test + voice();
         return test;
     }
-
-    protected abstract String voice ();
 
     @Override
     public String toString() {
