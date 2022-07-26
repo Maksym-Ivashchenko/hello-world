@@ -1,22 +1,28 @@
 package ua.goit;
 
+import ua.goit.clients.ColorEnum;
+
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Main1 {
+public class Main1 implements Serializable, Cloneable {
     public static void main(String[] args) {
-        People[] peoples = new People[3];
-        peoples[0] = new People("name3", "surname3", 35);
-        peoples[1] = new People("name2", "surname2", 25);
-        peoples[2] = new People("name1", "surname1", 45);
+//        People[] peoples = new People[3];
+//        peoples[0] = new People("name3", "surname3", 35);
+//        peoples[1] = new People("name2", "surname2", 25);
+//        peoples[2] = new People("name1", "surname1", 45);
+//
+//        Arrays.sort(peoples);
+//        System.out.println(Arrays.toString(peoples));
+//        Arrays.sort(peoples, new PeopleComparatorAge());
+//        System.out.println(Arrays.toString(peoples));
+//        Arrays.sort(peoples, new PeopleComparatorName());
+//        System.out.println(Arrays.toString(peoples));
 
-        Arrays.sort(peoples);
-        System.out.println(Arrays.toString(peoples));
-        Arrays.sort(peoples, new PeopleComparatorAge());
-        System.out.println(Arrays.toString(peoples));
-        Arrays.sort(peoples, new PeopleComparatorName());
-        System.out.println(Arrays.toString(peoples));
-
+        Test1 test1 = new Test1();
+        test1.test(new Main1());
+        test1.test(new Cat());
     }
 }
 

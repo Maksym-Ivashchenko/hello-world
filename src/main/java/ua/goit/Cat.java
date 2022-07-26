@@ -1,6 +1,8 @@
 package ua.goit;
 
-public class Cat extends Animal{
+import java.io.Serializable;
+
+public class Cat extends Animal implements Serializable {
 
     @Override
     public String voice() {

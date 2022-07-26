@@ -1,26 +1,30 @@
 package ua.goit.abstractFactory;
 
 public abstract class Factory {
-    private final static String OS = "WINDOWS";
+    private final static String OS = "MAC";
     private static Factory factory;
 
+    //ленивая инициализация синглтон
     public static Factory of() {
+        if (factory == null) factory = init(OS);
         return factory;
     }
 
-    protected Factory(){
-        if (factory == null) factory = init(OS);
+    //
+    private static Factory init(String os) {
+        switch (os) {
+            case "WINDOWS":
+                return new WindowsFactory();
+            case "LINUX":
+                return new LinuxFactory();
+            case "MAC":
+                return new MacFactory();
+            default:
+                throw new RuntimeException("Unsupported OS!");
+        }
     }
 
-    private Factory init(String os) {
-        if ("WINDOWS".equalsIgnoreCase(os)) {
-            return new MacFactory();
-        } else if ("LINUX".equalsIgnoreCase(os)) {
-            return new MacFactory();
-        } else if ("MAC".equalsIgnoreCase(os)) {
-            return new MacFactory();
-        }
-        throw new RuntimeException("Unsupported OS!");
+    protected Factory() {
     }
 
     public abstract Button createButton();
