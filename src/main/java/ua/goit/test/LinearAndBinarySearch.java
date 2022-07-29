@@ -1,4 +1,4 @@
-package ua.goit;
+package ua.goit.test;
 
 public class LinearAndBinarySearch {
     private static int counter = 0;

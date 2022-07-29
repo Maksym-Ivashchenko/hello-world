@@ -1,14 +1,19 @@
-package ua.goit;
+package ua.goit.animals;
 
 import java.util.Objects;
 
-public abstract class Animal implements IAnimal {
+public abstract class Animal<T> implements IAnimal<T> {
 
     public static Animal of() {
         Animal animal;
         if (Resources.ANIMAL.equalsIgnoreCase("CAT")) animal = new Cat();
         else if (Resources.ANIMAL.equalsIgnoreCase("DOG")) animal = new Dog();
         else animal = new Animal() {
+                @Override
+                public String description() {
+                    return "null";
+                }
+
                 @Override
                 public String voice() {
                     return "uuu";

@@ -1,9 +1,6 @@
-package ua.goit;
-
-import ua.goit.clients.ColorEnum;
+package ua.goit.test;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Comparator;
 
 public class Main1 implements Serializable, Cloneable {
@@ -20,9 +17,6 @@ public class Main1 implements Serializable, Cloneable {
 //        Arrays.sort(peoples, new PeopleComparatorName());
 //        System.out.println(Arrays.toString(peoples));
 
-        Test1 test1 = new Test1();
-        test1.test(new Main1());
-        test1.test(new Cat());
     }
 }
 

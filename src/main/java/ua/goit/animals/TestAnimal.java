@@ -1,20 +1,10 @@
-package ua.goit;
-
-import java.io.Serializable;
-
-public class Cat extends Animal implements Serializable {
-
-    @Override
-    public String voice() {
-        return "mur";
-    }
-}
+package ua.goit.animals;
 
 class TestAnimal {
     public static void main(String[] args) {
 
-//        Animal[]animals = new Animal[2];
-//
+        Animal[]animals = new Animal[2];
+
 //        animals[0] = new Cat();
 //        animals[0].setName("Cubic");
 //        animals[0].move(2,3);
@@ -22,7 +12,7 @@ class TestAnimal {
 //        animals[0].move(2,4);
 //        System.out.println(animals[0]);
 //        voice(animals[0]);
-//
+
 //        animals[1] = new Dog();
 //        animals[1].setName("Sharik");
 //        animals[1].move(3,5);
@@ -33,11 +23,11 @@ class TestAnimal {
 //        voice(animals);
 
         Animal animal = Animal.of();
-        System.out.println(animal.voice());
+        System.out.println(animal.description());
     }
 
-    public static void voice(Animal ... animals) {
-        for (Animal animal: animals) {
+    public static void voice(Animal... animals) {
+        for (Animal animal : animals) {
             System.out.println(animal.voice());
             System.out.println(animal.test());
         }

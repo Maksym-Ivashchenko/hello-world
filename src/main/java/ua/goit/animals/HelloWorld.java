@@ -1,4 +1,4 @@
-package ua.goit;
+package ua.goit.animals;
 
 import java.util.Scanner;
 
