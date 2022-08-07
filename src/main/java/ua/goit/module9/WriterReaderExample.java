@@ -10,12 +10,12 @@ public class WriterReaderExample {
         File file = new File(ABSOLUTE_PATH);
         checkIfFileAvailable(file);
 
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, true))) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, false))) {
             String content = "Hello World!!!\nHow are you today?\n";
             bufferedWriter.write(content);
 
         } catch (IOException e) {
-            System.err.println("EXEPTION!!!!" + e.getMessage());
+            System.err.println("EXCEPTION!!!!" + e.getMessage());
 
         }
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
